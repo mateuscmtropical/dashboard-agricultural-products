@@ -9,7 +9,7 @@ function Products() {
 
     const getProductData = useCallback(async values => {
         try {
-            const products = await fetch('http://localhost:3000/products-producers/list?categoria=ORGANIC')
+            const products = await fetch('http://localhost:3000/products-producers/list?category=ORGANIC')
             const formattedProducts = await products.json();
             
             setProductData(formattedProducts);
