@@ -1,5 +1,6 @@
-import { Button, TextField } from "@mui/material";
+import { Button, Card, TextField } from "@mui/material";
 import axios from "axios";
+import Link from "next/link";
 import { useCallback, useState } from "react";
 import style from './Aula.module.scss';
 
@@ -35,7 +36,13 @@ export default function Aula() {
                 method: "post",
                 url: "http://localhost:3000/api",
                 data: body
-            });
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.error(error);
+                });
 
         } catch (error) {
             console.warn(error);
